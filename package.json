@@ -1,0 +1,12 @@
+{
+  "name": "es-enron",
+  "version": "1.0.0",
+  "description": "Elasticsearch demo using Enron email dataset",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "mailparser": "^0.5.3",
+    "md5": "^2.0.0",
+    "walk": "^2.3.9"
+  },
+  "author": "Shaunak Kashyap <ycombinator@gmail.com>"
+}
