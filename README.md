@@ -6,6 +6,8 @@ parsed into JSON files. Each JSON file in the archive represents one email messa
 The size of this compressed dataset is 252MB. Uncompressed into individual JSON files,
 the size becomes 1.3GB.
 
+0. Install Node.js, MySQL, and Elasticsearch. Make sure MySQL and Elasticsearch are running.
+
 1. Uncompress the archive.
 
     tar xvf dataset.tgz
