@@ -25,7 +25,6 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
->>>>>>> 683c14b0ad6fc694a939ca8308a55e3eb5ed3483
 
 # Data
 dataset/
