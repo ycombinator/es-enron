@@ -21,9 +21,9 @@ the size becomes 1.3GB.
 
 ## Appendix
 
-The original Enron email dataset was taken from https://www.cs.cmu.edu/~./enron/.
-This is a set of files in EML format, where each file represents one email message.
-Some of these messages are duplicated.
+The original Enron email dataset was taken from https://www.cs.cmu.edu/~./enron/enron_mail_20150507.tgz.
+This is an archive of all Enron emails in EML format, where each file represents one email message.
+Some of these messages are duplicated in multiple files.
 
 The `parse_email_files.js` script will parse the original Enron email dataset into
 JSON files, after de-duplicating them.
