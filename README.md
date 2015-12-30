@@ -15,11 +15,11 @@ the size becomes 1.3GB.
 2. Load the emails into Elasticsearch.
 
     npm install   # if you haven't run this already
-    node load_into_es.js
+    ./load_into_es.sh
 
 3. Load the emails in MySQL.
 
-    node load_into_mysql.js
+    ./load_into_mysql.sh
 
 ## Appendix
 

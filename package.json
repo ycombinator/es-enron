@@ -4,11 +4,11 @@
   "description": "Elasticsearch demo using Enron email dataset",
   "dependencies": {
     "commander": "^2.9.0",
+    "elasticsearch": "^10.0.1",
+    "json2csv": "^3.0.1",
     "mailparser": "^0.5.3",
     "md5": "^2.0.0",
     "moment": "^2.10.6",
-    "mysql": "^2.10.0",
-    "progress": "^1.1.8",
     "walk": "^2.3.9"
   },
   "author": "Shaunak Kashyap <ycombinator@gmail.com>"

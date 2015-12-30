@@ -23,5 +23,24 @@ cat <<EOF | mysql -uroot enron
 	)
 EOF
 
-# Load dataset
-node --max-old-space-size=4096 load_into_mysql.js --source-dir dataset/
+# CREATE INDEXes
+cat <<EOF | mysql -uroot enron
+	CREATE INDEX emails_sender ON emails(sender)
+EOF
+
+cat <<EOF | mysql -uroot enron
+	CREATE FULLTEXT INDEX emails_subject ON emails(subject)
+EOF
+
+cat <<EOF | mysql -uroot enron
+	CREATE FULLTEXT INDEX emails_body ON emails(body)
+EOF
+
+# Transform dataset
+node transform_for_mysql_bulk_load.js > /tmp/emails.csv
+
+# Load dataset and time it
+time mysqlimport --fields-enclosed-by='"' -uroot enron -L /tmp/emails.csv
+
+# Cleanup
+rm /tmp/emails.csv
