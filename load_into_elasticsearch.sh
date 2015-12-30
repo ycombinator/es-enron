@@ -12,7 +12,9 @@ curl -XPOST 'http://localhost:9200/enron' -d'
 				"sender": { "type": "string", "index": "not_analyzed" },
 				"recipients": { "type": "string", "index": "not_analyzed" },
 				"cc": { "type": "string", "index": "not_analyzed" },
-				"bcc": { "type": "string", "index": "not_analyzed" }
+				"bcc": { "type": "string", "index": "not_analyzed" },
+        "subject": { "type": "string", "analyzer": "english" },
+        "body": { "type": "string", "analyzer": "english" }
 			}
 		}
 	}
