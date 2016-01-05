@@ -2,38 +2,38 @@
 
 # DROP DATABASE
 cat <<EOF | mysql -uroot
-	DROP DATABASE IF EXISTS enron
+  DROP DATABASE IF EXISTS enron
 EOF
 
 # CREATE DATABASE
 cat <<EOF | mysql -uroot
-	CREATE DATABASE enron
+  CREATE DATABASE enron
 EOF
 
 # CREATE TABLE
 cat <<EOF | mysql -uroot enron
-	CREATE TABLE IF NOT EXISTS emails (
-		sender	     VARCHAR(255) NOT NULL,
-		recipients   TEXT,
-		cc           TEXT,
-		bcc          TEXT,
-		subject      VARCHAR(1024),
-		body         MEDIUMTEXT,
-		datetime     DATETIME
-	)
+  CREATE TABLE IF NOT EXISTS emails (
+    sender       VARCHAR(255) NOT NULL,
+    recipients   TEXT,
+    cc           TEXT,
+    bcc          TEXT,
+    subject      VARCHAR(1024),
+    body         MEDIUMTEXT,
+    datetime     DATETIME
+  )
 EOF
 
 # CREATE INDEXes
 cat <<EOF | mysql -uroot enron
-	CREATE INDEX emails_sender ON emails(sender)
+  CREATE INDEX emails_sender ON emails(sender)
 EOF
 
 cat <<EOF | mysql -uroot enron
-	CREATE FULLTEXT INDEX emails_subject ON emails(subject)
+  CREATE FULLTEXT INDEX emails_subject ON emails(subject)
 EOF
 
 cat <<EOF | mysql -uroot enron
-	CREATE FULLTEXT INDEX emails_body ON emails(body)
+  CREATE FULLTEXT INDEX emails_body ON emails(body)
 EOF
 
 # Transform dataset
