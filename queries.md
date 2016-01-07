@@ -25,11 +25,11 @@
 
 ### SQL
 
-    SELECT COUNT(*) FROM emails WHERE body LIKE '%monetary fund%';
+    SELECT subject FROM emails WHERE body LIKE '%monetary fund%';
 
 ### Elasticsearch
 
-    curl -XPOST 'http://localhost:9200/enron/_count?pretty' -d'
+    curl -XPOST 'http://localhost:9200/enron/_search?pretty&fields=subject' -d'
     {
       "query": {
         "match_phrase": {
