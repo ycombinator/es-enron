@@ -1,16 +1,5 @@
 # Queries
 
-## Count all records
-
-### SQL
-
-    SELECT COUNT(*) FROM emails;
-
-### Elasticsearch
-
-    curl 'http://localhost:9200/enron/_count?pretty'
-
-
 ## Search for text in a single field
 
 ### SQL
