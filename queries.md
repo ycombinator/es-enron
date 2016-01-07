@@ -4,22 +4,21 @@
 
 ### SQL
 
-    SELECT COUNT(*) FROM emails WHERE MATCH(subject) AGAINST('monetary');
+    SELECT subject FROM emails WHERE MATCH(subject) AGAINST('monetary');
 
 ### Elasticsearch
 
-    curl 'http://localhost:9200/enron/_count?pretty&q=subject:monetary'
-
+    curl 'http://localhost:9200/enron/_search?pretty&q=subject:monetary&fields=subject'
 
 ## Search for text in multiple fields
 
 ### SQL
 
-    SELECT COUNT(*) from emails WHERE MATCH (subject) AGAINST ('monetary') OR MATCH(body) AGAINST ('monetary');
+    SELECT subject from emails WHERE MATCH (subject) AGAINST ('monetary') OR MATCH(body) AGAINST ('monetary');
 
 ### Elasticsearch
 
-    curl 'http://localhost:9200/enron/_count?pretty&q=subject:monetary+body:monetary'
+    curl 'http://localhost:9200/enron/_search?pretty&q=subject:monetary+body:monetary&fields=subject'
 
 
 ## Search for a phrase
