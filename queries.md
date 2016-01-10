@@ -37,3 +37,22 @@
         }
       }
     }'
+
+## Show top 10 senders
+
+### SQL
+
+    SELECT sender, COUNT(*) AS num_emails_sent FROM emails GROUP BY sender ORDER BY num_emails_sent DESC LIMIT 10;
+
+### Elasticsearch
+
+    curl -XPOST 'http://localhost:9200/enron/_search?pretty' -d '{
+      "size": 0,
+      "aggs": {
+        "top_10_senders": {
+          "terms": {
+            "field": "sender"
+          }
+        }
+      }
+    }'
