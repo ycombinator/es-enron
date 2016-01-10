@@ -24,7 +24,7 @@ curl -XPUT 'http://localhost:9200/cities/city/3' -d'
 '
 
 ### Query
-curl -XPOST 'http://localhost:9200/cities/_search' -d'
+curl -XPOST 'http://localhost:9200/cities/_search?pretty' -d'
 {
   "query": {
     "match": {
