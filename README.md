@@ -10,16 +10,21 @@ the size becomes 1.3GB.
 
 1. Uncompress the archive.
 
-    tar xvf dataset.tgz
-
+  ```
+  tar xvf dataset.tgz
+  ```
 2. Load the emails into Elasticsearch.
 
-    npm install   # if you haven't run this already
-    ./load_into_es.sh
+  ```
+  npm install   # if you haven't run this already
+  ./load_into_es.sh
+  ```
 
 3. Load the emails in MySQL.
 
-    ./load_into_mysql.sh
+  ```
+  ./load_into_mysql.sh
+  ```
 
 ## Appendix
 
