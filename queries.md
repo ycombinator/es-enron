@@ -10,11 +10,11 @@
 
 #### Using curl
 
-    curl 'http://localhost:9200/enron/_search?pretty&q=subject:monetary&fields=subject'
+    curl 'http://localhost:9200/enron/_search?pretty&q=subject:monetary&_source_include=subject'
 
 #### Using Console (fka Sense)
 
-    GET /enron/_search?q=subject:monetary&fields=subject
+    GET /enron/_search?q=subject:monetary&_source_include=subject
 
 ## Search for text in multiple fields
 
@@ -26,11 +26,11 @@
 
 #### Using curl
 
-    curl 'http://localhost:9200/enron/_search?pretty&q=subject:monetary+body:monetary&fields=subject'
+    curl 'http://localhost:9200/enron/_search?pretty&q=subject:monetary+body:monetary&_source_include=subject'
 
 #### Using Console (fka Sense)
 
-    GET /enron/_search?q=subject:monetary+body:monetary&fields=subject
+    GET /enron/_search?q=subject:monetary+body:monetary&_source_include=subject
 
 ## Search for a phrase
 
@@ -42,7 +42,7 @@
 
 #### Using curl
 
-    curl -XPOST 'http://localhost:9200/enron/_search?pretty&fields=subject' -d'
+    curl -XPOST 'http://localhost:9200/enron/_search?pretty&_source_include=subject' -d'
     {
       "query": {
         "match_phrase": {
@@ -53,14 +53,11 @@
 
 #### Using Console (fka Sense)
 
-    POST /enron/_search
+    POST /enron/_search?_source_include=subject
     {
       "query": {
         "match_phrase": {
           "body": "monetary fund"
         }
-      },
-      "fields": [
-        "subject"
-      ]
+      }
     }
