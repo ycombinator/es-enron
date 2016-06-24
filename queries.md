@@ -8,7 +8,13 @@
 
 ### Elasticsearch
 
+#### Using curl
+
     curl 'http://localhost:9200/enron/_search?pretty&q=subject:monetary&fields=subject'
+
+#### Using Console (fka Sense)
+
+    GET /enron/_search?q=subject:monetary&fields=subject
 
 ## Search for text in multiple fields
 
@@ -18,8 +24,13 @@
 
 ### Elasticsearch
 
+#### Using curl
+
     curl 'http://localhost:9200/enron/_search?pretty&q=subject:monetary+body:monetary&fields=subject'
 
+#### Using Console (fka Sense)
+
+    GET /enron/_search?q=subject:monetary+body:monetary&fields=subject
 
 ## Search for a phrase
 
@@ -28,6 +39,8 @@
     SELECT subject FROM emails WHERE body LIKE '%monetary fund%';
 
 ### Elasticsearch
+
+#### Using curl
 
     curl -XPOST 'http://localhost:9200/enron/_search?pretty&fields=subject' -d'
     {
@@ -38,21 +51,16 @@
       }
     }'
 
-## Show top 10 senders
+#### Using Console (fka Sense)
 
-### SQL
-
-    SELECT sender, COUNT(*) AS num_emails_sent FROM emails GROUP BY sender ORDER BY num_emails_sent DESC LIMIT 10;
-
-### Elasticsearch
-
-    curl -XPOST 'http://localhost:9200/enron/_search?pretty' -d '{
-      "size": 0,
-      "aggs": {
-        "top_10_senders": {
-          "terms": {
-            "field": "sender"
-          }
+    POST /enron/_search
+    {
+      "query": {
+        "match_phrase": {
+          "body": "monetary fund"
         }
-      }
-    }'
+      },
+      "fields": [
+        "subject"
+      ]
+    }
