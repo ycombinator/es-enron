@@ -9,10 +9,10 @@ curl -XPOST 'http://localhost:9200/enron' -d'
   "mappings": {
     "email": {
       "properties": {
-        "sender": { "type": "string", "index": "not_analyzed" },
-        "recipients": { "type": "string", "index": "not_analyzed" },
-        "cc": { "type": "string", "index": "not_analyzed" },
-        "bcc": { "type": "string", "index": "not_analyzed" },
+        "sender": { "type": "keyword" },
+        "recipients": { "type": "keyword" },
+        "cc": { "type": "keyword" },
+        "bcc": { "type": "keyword" },
         "subject": { "type": "string", "analyzer": "english" },
         "body": { "type": "string", "analyzer": "english" }
       }

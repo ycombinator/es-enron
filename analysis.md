@@ -35,7 +35,7 @@ curl -XPOST 'http://localhost:9200/cities/_search?pretty' -d'
 '
 
 
-## With `not_analyzed` mapping
+## With `keyword` mapping
 
 ### Cleanup
 curl -XDELETE 'http://localhost:9200/cities'
@@ -47,8 +47,7 @@ curl -XPUT 'http://localhost:9200/cities' -d'
     "city": {
       "properties": {
         "city": {
-          "type": "string",
-          "index": "not_analyzed"
+          "type": "keyword"
         }
       }
     }
