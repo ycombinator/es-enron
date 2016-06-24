@@ -1,3 +1,12 @@
+## Important Pre-Requisite
+Before you `git clone` this repository, you will need to install `git-lfs`. It is required
+because the `dataset.tgz` file is rather large and cannot be stored as-is in the
+repository.
+
+Instructions on installing `git-lfs` are here: https://help.github.com/articles/installing-git-large-file-storage/.
+You only need to _install_ `git-lfs`. You do **not** need to _configure_ it after that. After
+installation, proceed with `git clone ...` as usual.
+
 ## Preparation
 
 The `dataset.tgz` file contains an archive of all Enron emails, de-duped, and
