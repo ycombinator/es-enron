@@ -1,11 +1,5 @@
-## Important Pre-Requisite
-Before you `git clone` this repository, you will need to install `git-lfs`. It is required
-because the `dataset.tgz` file is rather large and cannot be stored as-is in the
-repository.
-
-Instructions on installing `git-lfs` are here: https://help.github.com/articles/installing-git-large-file-storage/.
-You only need to _install_ `git-lfs`. You do **not** need to _configure_ it after that. After
-installation, proceed with `git clone ...` as usual.
+## Pre-requisite
+Download `dataset.tgz` from [here](https://drive.google.com/open?id=0B4WVXFLEOn97X2xzM0hFV09hVEk) into the same folder as where you clone this repository.
 
 ## Preparation
 
