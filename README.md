@@ -20,7 +20,7 @@ the size becomes 1.3GB.
 
   ```
   npm install   # if you haven't run this already
-  ./load_into_es.sh
+  ./load_into_elasticsearch.sh
   ```
 
 3. Load the emails in MySQL.
